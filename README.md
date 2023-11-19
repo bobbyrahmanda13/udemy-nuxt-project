@@ -1,1 +1,1 @@
-# Collectoin Nuxt Project from Udemy
+# Collection Nuxt Project from Udemy
