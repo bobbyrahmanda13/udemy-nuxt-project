@@ -1,9 +1,57 @@
 <script setup lang="ts">
-const options = reactive({
-  gender: "Unisex",
-  popularity: "Unique",
-  length: "Short"
+
+// vanilla javascript script : yang memiliki banyak masalah, sepert jika kita ganti gender dengan selain yang ada maka itu akan jalan juga contoh jika options.gender yang harusnya hanya unisex, girl, and boy tapi bisa diganti dengan yang lain dan program nya masih jalan ini yang menjadi masalah, jadi harus di refactor di typescript yang membatasi itu menggunakan typesript union
+// const options = reactive({
+//   gender: "Unisex",
+//   popularity: "Unique",
+//   length: "Long"
+// })
+
+// cara 1
+// type Gender = "Boy" | "Unisex" | "Girl"
+// type Popularity = "Trendy" | "Unique"
+// type Length = "Long" | "All" | "Short"
+//
+// type OptionsState = {
+//   gender: Gender
+//   popularity: Popularity
+//   length: Length
+// }
+// const options = reactive<OptionsState>({
+//   gender: "Girl",
+//   popularity: "Unique",
+//   length: "All"
+// })
+
+// cara 2
+enum Gender {
+  BOY = 'Boy',
+  UNISEX = 'Unisex',
+  GIRL = 'Girl'
+}
+
+enum Popularity {
+  TRENDY = 'Trendy',
+  UNIQUE = 'Unique',
+}
+enum Length {
+  LONG = 'Long',
+  ALL = 'All',
+  SHORT = 'Short'
+}
+
+interface OptionsState {
+  gender: Gender
+  popularity: Popularity
+  length: Length
+}
+
+const options = reactive<OptionsState>({
+  gender: Gender.BOY,
+  popularity: Popularity.TRENDY,
+  length: Length.ALL
 })
+
 </script>
 
 <template>
