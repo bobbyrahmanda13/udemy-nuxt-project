@@ -8,49 +8,49 @@
 // })
 
 // cara 1
-// type Gender = "Boy" | "Unisex" | "Girl"
-// type Popularity = "Trendy" | "Unique"
-// type Length = "Long" | "All" | "Short"
-//
-// type OptionsState = {
-//   gender: Gender
-//   popularity: Popularity
-//   length: Length
-// }
-// const options = reactive<OptionsState>({
-//   gender: "Girl",
-//   popularity: "Unique",
-//   length: "All"
-// })
+type Gender = "Boy" | "Unisex" | "Girl"
+type Popularity = "Trendy" | "Unique"
+type Length = "Long" | "All" | "Short"
 
-// cara 2
-enum Gender {
-  BOY = 'Boy',
-  UNISEX = 'Unisex',
-  GIRL = 'Girl'
-}
-
-enum Popularity {
-  TRENDY = 'Trendy',
-  UNIQUE = 'Unique',
-}
-enum Length {
-  LONG = 'Long',
-  ALL = 'All',
-  SHORT = 'Short'
-}
-
-interface OptionsState {
+type OptionsState = {
   gender: Gender
   popularity: Popularity
   length: Length
 }
-
 const options = reactive<OptionsState>({
-  gender: Gender.BOY,
-  popularity: Popularity.TRENDY,
-  length: Length.ALL
+  gender: "Boy",
+  popularity: "Unique",
+  length: "All"
 })
+
+// cara 2
+// enum Gender {
+//   BOY = 'Boy',
+//   UNISEX = 'Unisex',
+//   GIRL = 'Girl'
+// }
+//
+// enum Popularity {
+//   TRENDY = 'Trendy',
+//   UNIQUE = 'Unique',
+// }
+// enum Length {
+//   LONG = 'Long',
+//   ALL = 'All',
+//   SHORT = 'Short'
+// }
+//
+// interface OptionsState {
+//   gender: Gender
+//   popularity: Popularity
+//   length: Length
+// }
+//
+// const options = reactive<OptionsState>({
+//   gender: Gender.BOY,
+//   popularity: Popularity.TRENDY,
+//   length: Length.ALL
+// })
 
 </script>
 
