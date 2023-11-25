@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { Gender, Popularity, Length } from '@/data'
+import { names } from '@/data'
 
-// vanilla javascript script : yang memiliki banyak masalah, sepert jika kita ganti gender dengan selain yang ada maka itu akan jalan juga contoh jika options.gender yang harusnya hanya unisex, girl, and boy tapi bisa diganti dengan yang lain dan program nya masih jalan ini yang menjadi masalah, jadi harus di refactor di typescript yang membatasi itu menggunakan typesript union
+// vanilla javascript script : yang memiliki banyak masalah, seperti jika kita ganti gender dengan selain yang ada maka itu akan jalan juga contoh jika options.gender yang harusnya hanya unisex, girl, and boy tapi bisa diganti dengan yang lain dan program nya masih jalan ini yang menjadi masalah, jadi harus di refactor di typescript yang membatasi itu menggunakan typesript union
 // const options = reactive({
 //   gender: "Unisex",
 //   popularity: "Unique",
@@ -8,15 +10,12 @@
 // })
 
 // cara 1
-type Gender = "Boy" | "Unisex" | "Girl"
-type Popularity = "Trendy" | "Unique"
-type Length = "Long" | "All" | "Short"
-
 type OptionsState = {
   gender: Gender
   popularity: Popularity
   length: Length
 }
+
 const options = reactive<OptionsState>({
   gender: "Boy",
   popularity: "Unique",
@@ -51,6 +50,23 @@ const options = reactive<OptionsState>({
 //   popularity: Popularity.TRENDY,
 //   length: Length.ALL
 // })
+
+
+const selectedNames = ref<string[]>([])
+
+// names.value.push("testing")
+// names.value.push(3)
+
+const computeSelectedNames = () => {
+  const filterNames = names
+    .filter((name) => name.gender === options.gender)
+    .filter((name) => name.popularity === options.popularity)
+    .filter((name) => {
+      if (options.length === "All") return true
+      else return name.length === options.length
+    })
+  selectedNames.value = filterNames.map(name => name.name)
+};
 
 </script>
 
@@ -100,6 +116,10 @@ const options = reactive<OptionsState>({
             </div>
           </div>
         </div>
+      </div>
+      <button class="primary" @click="computeSelectedNames">Find Names</button>
+      <div style="margin-top:1rem">
+        {{ selectedNames }}
       </div>
     </div>
   </div>
@@ -189,4 +209,16 @@ h1 {
 .option-active {
   background-color: red;
   color: white;
-}</style>
+}
+
+.primary {
+  background-color: red;
+  color: white;
+  border-radius: 6.5rem;
+  border: none;
+  padding: 0.75rem 4rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+</style>
