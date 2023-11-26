@@ -68,6 +68,24 @@ const computeSelectedNames = () => {
   selectedNames.value = filterNames.map(name => name.name)
 };
 
+const optionsArray = [
+  {
+    title: "1) Choose a gender",
+    category: "gender",
+    buttons: ["Boy", "Unisex", "Girl"] as Gender[]
+  },
+  {
+    title: "2) Choose the name's popularity",
+    category: "popularity",
+    buttons: ["Trendy", "Unique"] as Popularity[]
+  },
+
+  {
+    title: "3) Choose name's length",
+    category: "length",
+    buttons: ["Long", "All", "Short"] as Length[]
+  }
+]
 </script>
 
 <template>
@@ -86,37 +104,7 @@ const computeSelectedNames = () => {
     <!--     incidunt.</p> -->
     <!-- </div> -->
     <div class="options-container">
-      <div class="option-container">
-        <h4>1) Choose a gender</h4>
-        <div class="option-buttons">
-          <button class="option option-left" :class="options.gender === 'Boy' && 'option-active'"
-            @click="options.gender = 'Boy'">Boy</button>
-          <button class="option" :class="options.gender === 'Unisex' && 'option-active'"
-            @click="options.gender = 'Unisex'">Unisex</button>
-          <button class="option option-right" :class="options.gender === 'Girl' && 'option-active'"
-            @click="options.gender = 'Girl'">Girl</button>
-        </div>
-        <div class="option-container">
-          <h4>2) Choose the name's popularity</h4>
-          <div class="option-buttons">
-            <button class="option option-left" :class="options.popularity === 'Trendy' && 'option-active'"
-              @click="options.popularity = 'Trendy'">Trendy</button>
-            <button class="option option-right" :class="options.popularity === 'Unique' && 'option-active'"
-              @click="options.popularity = 'Unique'">Unique</button>
-          </div>
-          <div class="option-container">
-            <h4>3) Choose name' length</h4>
-            <div class="option-buttons">
-              <button class="option option-left" :class="options.length === 'Long' && 'option-active'"
-                @click="options.length = 'Long'">Long</button>
-              <button class="option" :class="options.length === 'All' && 'option-active'"
-                @click="options.length = 'All'">All</button>
-              <button class="option option-right" :class="options.length === 'Short' && 'option-active'"
-                @click="options.length = 'Short'">Short</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Option v-for="option in optionsArray" :key="option.title" :option="option" :options="options" />
       <button class="primary" @click="computeSelectedNames">Find Names</button>
     </div>
     <div class="cards-container">
@@ -185,34 +173,6 @@ h1 {
   position: relative;
 }
 
-.option-container {
-  margin-bottom: 2rem;
-}
-
-.option {
-  background: white;
-  outline: 0.15rem solid red;
-  border: none;
-  padding: 0.75rem;
-  width: 10rem;
-  font-size: 1rem;
-  color: black;
-  cursor: pointer;
-  font-weight: 200;
-}
-
-.option-left {
-  border-radius: 1rem 0 0 1rem;
-}
-
-.option-right {
-  border-radius: 0 1rem 1rem 0;
-}
-
-.option-active {
-  background-color: red;
-  color: white;
-}
 
 .primary {
   background-color: red;
