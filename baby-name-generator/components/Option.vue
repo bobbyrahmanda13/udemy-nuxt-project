@@ -27,8 +27,9 @@ const props = defineProps<OptionProps>()
 //   }
 // };
 
-// solced 2
-const setOptionValue = (value: Gender | Popularity | Length) => {
+// solved 2
+type OptionsValue = Gender | Popularity | Length
+const setOptionValue = (value: OptionsValue) => {
   switch (props.option.category) {
     case 'gender':
       props.options.gender = value as Gender;
@@ -41,20 +42,32 @@ const setOptionValue = (value: Gender | Popularity | Length) => {
       break;
   }
 };
+type OptionssCategory = 'gender' | 'popularity' | 'length'
+
+const computeButtonClass = (value: OptionsValue, index:number) => {
+  const classNames = []
+  if (props.options[props.option.category as OptionssCategory] === value) {
+    classNames.push("option-active")
+  }
+  if (index === 0) classNames.push("option-left")
+  if (index === props.option.buttons.length - 1) classNames.push("option-right")
+  return classNames.join(" ")
+};
+
+
 
 </script>
 <template>
   <div class="option-container">
     <h4>{{ option.title }}</h4>
     <div class="option-buttons">
-      <button v-for="value in option.buttons" :key="value" class="option"
-        :class="options[option.category as 'gender' | 'popularity' | 'length'] === value && 'option-active'" @click="setOptionValue(value)">{{ value
+      <button v-for="(value, index) in option.buttons" :key="value" class="option"
+        :class="computeButtonClass(value, index)" @click="setOptionValue(value)">{{ value
         }}</button>
     </div>
   </div>
 </template>
 <style scoped>
-  
 .option-container {
   margin-bottom: 2rem;
 }
