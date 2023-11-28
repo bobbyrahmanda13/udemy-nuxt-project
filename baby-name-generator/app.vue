@@ -52,7 +52,6 @@ const options = reactive<OptionsState>({
 // })
 
 
-const selectedNames = ref<string[]>([])
 
 // names.value.push("testing")
 // names.value.push(3)
@@ -67,6 +66,14 @@ const computeSelectedNames = () => {
     })
   selectedNames.value = filterNames.map(name => name.name)
 };
+
+const selectedNames = ref<string[]>([])
+
+const removeName = (index:number):void => {
+  const filteredsNames = [...selectedNames.value]
+  filteredsNames.splice(index, 1)
+  selectedNames.value = filteredsNames
+}
 
 const optionsArray = [
   {
@@ -112,7 +119,7 @@ const optionsArray = [
       <!--   <h4>{{ name }}</h4> -->
       <!--   <p>x</p> -->
       <!-- </div> -->
-      <CardName v-for="name in selectedNames" :key="name" class="card" :name="name"/>
+      <CardName v-for="(name, index) in selectedNames" :key="name" class="card" :name="name" @remove="() => removeName(index)" :index="index" />
     </div>
   </div>
 </template>
@@ -191,5 +198,4 @@ h1 {
   margin-top: 3rem;
   flex-wrap: wrap;
 }
-
 </style>
