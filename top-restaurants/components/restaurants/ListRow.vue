@@ -15,7 +15,7 @@ const props = defineProps<RowProps>();
   </div>
   <div v-else class="row" :style="index! % 2 === 0 ? { background: 'rgba(128,128,128,0.15)' } : null">
     <h4 class="header rank">{{ rank }}</h4>
-    <NuxtLink :to="`/restaurant/${name}`" class="header link">{{ name }}</NuxtLink>
+    <NuxtLink :to="`/restaurants/${name}`" class="header link">{{ name }}</NuxtLink>
   </div>
 </template>
 
