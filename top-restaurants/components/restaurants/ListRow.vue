@@ -1,7 +1,21 @@
+<script setup lang="ts">
+type RowProps = {
+  rank?: number
+  name?: string
+  index?: number
+  theHeader?: boolean
+}
+const props = defineProps<RowProps>();
+
+</script>
 <template>
-  <div class="row">
-    <h4 class="header rank">1</h4>
-    <a href="/" class="header link">McDonalds</a>
+  <div class="row" v-if="theHeader">
+    <h4 class="header">Rank</h4>
+    <h4 class="header">Chain</h4>
+  </div>
+  <div v-else class="row" :style="index! % 2 === 0 ? { background: 'rgba(128,128,128,0.15)' } : null">
+    <h4 class="header rank">{{ rank }}</h4>
+    <NuxtLink :to="`/restaurant/${name}`" class="header link">{{ name }}</NuxtLink>
   </div>
 </template>
 
@@ -21,9 +35,11 @@
   font-weight: 700;
   width: 4rem;
 }
+
 .rank {
   color: black;
 }
+
 .link {
   text-decoration: none;
   color: rgb(228, 157, 27);
