@@ -6,12 +6,14 @@ const theName = route.params.name
 
 const myRestaurants = restaurants.find(r => r.name === theName)
 
+const dynamicApiImage = ref(myRestaurants?.imageUrl)
+
 </script>
 <template>
   <div>
     <div class="restaurant-container">
       <div class="image-container">
-        <NuxtImg :src="myRestaurants?.imageUrl" />
+        <NuxtImg v-if="dynamicApiImage" :src="dynamicApiImage" />
       </div>
       <div class="info-container">
         <h1>{{ myRestaurants?.name }}</h1>
