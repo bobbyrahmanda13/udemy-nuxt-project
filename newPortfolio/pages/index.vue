@@ -1,5 +1,5 @@
 <template>
   <div>
-    <NuxtPage />
+    <h1>sdfdas</h1>
   </div>
 </template>
