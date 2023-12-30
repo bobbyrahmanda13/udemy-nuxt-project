@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Nav />
     <div class="container">
       <h1>Welcome to restaurant</h1>
       <a href="/restaurants">Go to restaurant</a>

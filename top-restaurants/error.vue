@@ -8,7 +8,6 @@ const props = defineProps({
 </script>
 <template>
   <div>
-    <Nav />
     <div class="container">
       <h1>Page not found</h1>
       <NuxtLink class="btn" to="/">Go Back</NuxtLink>
