@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // definePageMeta error and setPageLayout not support script setup lang="ts"
+// this will work in both `<script setup>` and `<script>
 // fix this using :
 // import { definePageMeta, setPageLayout } from '#imports';
 
