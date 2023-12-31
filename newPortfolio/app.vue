@@ -1,14 +1,13 @@
+<script setup lang="ts">
+// const layout = 'another' => single page
+</script>
 <template>
-  <nav>
-    <ul>
-      <li>
-        <NuxtLink to="/">Main</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/about">About</NuxtLink>
-      </li>
-    </ul>
-  </nav>
   <div>
-    <NuxtPage />
-</div></template>
+    <!-- <NuxtLayout :name="layout"> -->
+    <!--   <NuxtPage /> -->
+    <!-- </NuxtLayout> -->
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>
