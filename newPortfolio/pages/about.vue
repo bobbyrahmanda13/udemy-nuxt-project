@@ -13,6 +13,11 @@
 // function enableCustomLayout() {
 //   setPageLayout('another')
 // }
+
+useHead({
+  title: 'About'
+})
+
 </script>
 
 <template>
