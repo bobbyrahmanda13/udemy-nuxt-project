@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// const layout = 'another' => single page
 </script>
 <template>
   <div>
