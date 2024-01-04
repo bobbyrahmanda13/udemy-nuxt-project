@@ -5,7 +5,10 @@
         <NuxtLink to="/" class="p1 hover:bg-gray-200">Main</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/about">About</NuxtLink>
+        <NuxtLink to="/projects" class="p1 hover:bg-gray-200">Projects</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/about" class="p1 hover:bg-gray-200">About</NuxtLink>
       </li>
     </ul>
   </nav>
