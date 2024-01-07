@@ -5,7 +5,7 @@ type Repo = {
   html_url: string
   description: string
   stargazers_count: number
-  pushed_at: number
+  pushed_at: string
 }
 
 const { error, pending, data } = await useFetch<Repo[], Error>('https://api.github.com/users/bobbyrahmanda13/repos')
