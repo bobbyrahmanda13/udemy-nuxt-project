@@ -12,8 +12,13 @@ useHead({
       crossorigin: ''
     }
   ]
-
 })
+
+const colorMode = useColorMode()
+
+console.log(colorMode.preference);
+colorMode.preference = 'dark'
+
 </script>
 <template>
   <div class="container mx-auto max-w-2xl">
@@ -32,5 +37,6 @@ useHead({
 <style>
 body {
   font-family: Roboto;
+  --uno:bg-base color-base;
 }
 </style>
