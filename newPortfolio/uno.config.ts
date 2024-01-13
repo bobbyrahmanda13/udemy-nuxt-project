@@ -1,12 +1,11 @@
 import { defineConfig, presetUno } from 'unocss'
-import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineConfig({
   shortcuts: {
     'border-base': 'border-gray-200 dark:border-dark-200',
-    'bg-base': 'bg-white dark:bg-dark-100',
-    'color-base': 'text-gray-900 dark:text-gray-300',
-    'color-fade': 'text-gray-900:50 dark:text-gray-300:50'
+    'bg-base': 'bg-white dark:bg-gray-900',
+    'color-base': 'text-gray-900 dark:text-gray-200',
+    'color-fade': 'text-gray-901:50 dark:text-gray-300:50'
   },
   theme: {
     colors: {
@@ -17,9 +16,6 @@ export default defineConfig({
   },
   presets: [
     presetUno()
-  ],
-  transformers: [
-    transformerDirectives()
   ]
 })
 

@@ -13,14 +13,14 @@ export default defineNuxtConfig({
   colorMode:{
     classSuffix:'',
   },
-  typescript: {
-    includeWorkspace: true,
-    tsConfig: {
-      include: [
-        '../content/**/.template/**/*.ts',
-      ],
-    },
-  },
+  // typescript: {
+  //   includeWorkspace: true,
+  //   tsConfig: {
+  //     include: [
+  //       '../content/**/.template/**/*.ts',
+  //     ],
+  //   },
+  // },
   nitro: {
     devProxy: {
       host: '127.0.0.1'
