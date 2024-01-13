@@ -14,20 +14,25 @@ useHead({
   ]
 })
 
-const colorMode = useColorMode()
-
-console.log(colorMode.preference);
-colorMode.preference = 'dark'
+// testing colormode using default layout before create component toggleDarkMode
+// const colorMode = useColorMode()
+//
+// colorMode.preference = 'light'
+// console.log(colorMode.preference);
 
 </script>
 <template>
   <div class="container mx-auto max-w-2xl">
     <header class="flex justify-between items-center mt5">
-      <div class="">
-        <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200">Bobby Rahmanda</NuxtLink>
+      <div class="flex justify-center space-x-12">
+        <div class="">
+          <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200">Bobby Rahmanda</NuxtLink>
+        </div>
+        <TheNav />
+        <ColorToggle />
       </div>
-      <TheNav />
     </header>
+
     <main class="p2">
       <slot />
     </main>
@@ -37,6 +42,6 @@ colorMode.preference = 'dark'
 <style>
 body {
   font-family: Roboto;
-  --uno:bg-base color-base;
+  --uno: bg-base color-base;
 }
 </style>

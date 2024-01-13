@@ -1,4 +1,4 @@
-import { defineConfig, presetUno } from 'unocss'
+import { defineConfig, presetUno, transformerDirectives } from 'unocss'
 
 export default defineConfig({
   shortcuts: {
@@ -16,6 +16,9 @@ export default defineConfig({
   },
   presets: [
     presetUno()
+  ],
+  transformers: [
+    transformerDirectives()
   ]
 })
 
