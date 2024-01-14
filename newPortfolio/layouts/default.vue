@@ -29,10 +29,15 @@ useHead({
         <div class="">
           <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200">Bobby Rahmanda</NuxtLink>
         </div>
+
         <TheNav />
-        <!-- <ColorToggle /> -->
-        <!-- <ColorToggle2 /> -->
-        <ColorToggle3 />
+
+        <ClientOnly>
+          <!-- <ColorToggle /> -->
+          <ColorToggle2 />
+          <!-- <ColorToggle3 /> -->
+        </ClientOnly>
+
       </div>
     </header>
 

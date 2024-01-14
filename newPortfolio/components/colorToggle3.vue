@@ -7,16 +7,17 @@
 </template>
 
 <script setup lang="ts">
+
 const isDark = useDark()
 
-// @ts-expect-error experimental API
-const isAppearanceTransition = document.startViewTransition
-  && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 /**
  * Credit to [@hooray](https://github.com/hooray)
  * @see https://github.com/vuejs/vitepress/pull/2347
  */
 function toggleDark(event: MouseEvent) {
+  // '@ts-expect-error' experimental API
+  const isAppearanceTransition = document.startViewTransition
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   if (!isAppearanceTransition) {
     isDark.value = !isDark.value
