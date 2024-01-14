@@ -3,14 +3,21 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  experimental: {
+    viewTransition: true
+  },
   modules: [
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
+    '@vueuse/nuxt'
   ],
   css: [
-    '@unocss/reset/tailwind.css'
+    '~/assets/main.css',
+    '@unocss/reset/tailwind.css',
   ],
-  colorMode:{
-    classSuffix:'',
+  colorMode: {
+    classSuffix: '',
+    preference: 'system',
+    fallback: 'light'
   },
 })
