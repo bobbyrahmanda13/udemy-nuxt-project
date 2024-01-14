@@ -15,7 +15,7 @@
 // }
 
 useHead({
-  title: 'About'
+  title: 'About',
 })
 
 </script>

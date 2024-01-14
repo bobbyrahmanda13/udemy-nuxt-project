@@ -27,7 +27,7 @@ useHead({
     <header class="flex justify-between items-center mt5">
       <div class="flex justify-center space-x-12">
         <div class="">
-          <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200">Bobby Rahmanda</NuxtLink>
+          <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded">Bobby Rahmanda</NuxtLink>
         </div>
 
         <TheNav />
