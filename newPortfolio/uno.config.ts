@@ -1,4 +1,4 @@
-import { defineConfig, presetUno, presetIcons, transformerDirectives } from 'unocss'
+import { defineConfig, presetUno, presetIcons, presetTypography, transformerDirectives } from 'unocss'
 
 
 export default defineConfig({
@@ -7,8 +7,8 @@ export default defineConfig({
     'bg-base': 'bg-white dark:bg-gray-900',
     'color-base': 'text-gray-900 dark:text-gray-200',
     'color-fade': 'text-gray-901:50 dark:text-gray-300:50',
-    'color-hover':'hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded',
-    'color-active':'bg-gray-200 dark:bg-gray-700 rounded'
+    'color-hover': 'hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded',
+    'color-active': 'bg-gray-200 dark:bg-gray-700 rounded'
   },
   theme: {
     colors: {
@@ -19,7 +19,8 @@ export default defineConfig({
   },
   presets: [
     presetUno(),
-    presetIcons()
+    presetIcons(),
+    presetTypography()
   ],
   transformers: [
     transformerDirectives()

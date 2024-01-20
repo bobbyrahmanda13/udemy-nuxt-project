@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxt/content'
   ],
   css: [
     '~/assets/main.css',

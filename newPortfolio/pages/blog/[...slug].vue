@@ -4,8 +4,7 @@ const route = useRoute()
 
 </script>
 <template>
-  <div>
-    we are inside a blog!
-  </div>
-  <div class="">Post id is {{ route.params.id }}</div>
+  <article class="text-base prose prose-truegray xl:text-xl">
+    <ContentDoc />
+  </article>
 </template>
