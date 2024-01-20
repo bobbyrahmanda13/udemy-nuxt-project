@@ -12,6 +12,14 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/content'
   ],
+  content: {
+    highlight: {
+      theme: {
+        default: 'solarized-light',
+        dark: 'solarized-dark'
+      }
+    }
+  },
   css: [
     '~/assets/main.css',
     '@unocss/reset/tailwind.css',

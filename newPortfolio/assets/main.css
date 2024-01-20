@@ -2,6 +2,9 @@ body {
   font-family: Roboto;
   --uno: bg-base color-base;
 }
+/* h1, h2, h3, h4, h5, h6, a { */
+/*   --uno: color-base; */
+/* } */
 
 ::view-transition-old(root),
 ::view-transition-new(root) {

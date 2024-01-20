@@ -4,7 +4,7 @@ const route = useRoute()
 
 </script>
 <template>
-  <article class="text-base prose prose-truegray xl:text-xl">
+  <article class="prose dark:prose-invert prose-truegray">
     <ContentDoc />
   </article>
 </template>
