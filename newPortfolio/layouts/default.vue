@@ -24,8 +24,8 @@ useHead({
 
 <template>
   <div class="container mx-auto max-w-2xl">
-    <header class="flex justify-between items-center mt5">
-      <div class="flex justify-center space-x-12">
+    <header class="flex justify-between items-center mt5 mb5">
+      <div class="flex justify-center items-center space-x-12">
         <div class="">
           <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded">Bobby Rahmanda</NuxtLink>
         </div>

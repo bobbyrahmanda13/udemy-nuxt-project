@@ -1,6 +1,6 @@
 <template>
   <nav class="font-mono">
-    <ul class="flex space-x-4">
+    <ul class="flex space-x-4 ">
       <li>
         <NuxtLink to="/" class="p1 color-hover" active-class="color-active">Main</NuxtLink>
       </li>
