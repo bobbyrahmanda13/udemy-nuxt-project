@@ -1,0 +1,17 @@
+/* https://github.com/nuxt/learn.nuxt.com/blob/420175560fc01f7ce5e8080eaa989dfe851987c5/styles/prose.css#L26 */
+.prose pre/* [class*='language-']  */{
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1rem -1.5rem;
+  --uno: bg-gray:8 dark:bg-gray:7 rounded-4;
+}
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *)) {
+  border-radius: 0.2rem;
+  padding: 0.2em 0.4em;
+  --uno: bg-gray:8 text-primary/75;
+}
+
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
+  content: '';
+}

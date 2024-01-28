@@ -13,15 +13,17 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
   content: {
+    documentDriven: true,
     highlight: {
       theme: {
-        default: 'github-light',
-        dark: 'github-dark'
+        default: 'min-light',
+        dark: 'min-dark'
       }
     }
   },
   css: [
     '~/assets/main.css',
+    '~/assets/prose.css',
     '@unocss/reset/tailwind.css',
   ],
   colorMode: {

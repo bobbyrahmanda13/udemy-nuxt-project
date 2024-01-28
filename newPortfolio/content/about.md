@@ -1,9 +1,7 @@
 ---
 description: 'testing'
 ---
-<h1 class='text-sm'>
-Hello There, I`m Rahman
-</h1>
+# Hello There, I`m Rahman
 
 ## About Me
 
