@@ -14,17 +14,16 @@
 //   setPageLayout('another')
 // }
 
-useHead({
-  title: 'About',
-})
+// useHead({
+//   title: 'About',
+// })
 
 </script>
 
 <template>
-  <div>
-    <h1>testing</h1>
-  </div>
-
+  <article class="prose dark:prose-invert prose-truegray">
+    <ContentDoc path="/about" />
+  </article>
   <!-- dynamic layout  -->
   <!-- <div class=""><button @click="enableCustomLayout">Update Layout</button></div> -->
 </template>
