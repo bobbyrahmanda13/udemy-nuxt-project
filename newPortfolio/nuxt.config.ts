@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
   content: {
-    documentDriven: true,
+    // documentDriven: true,
     highlight: {
       theme: {
         default: 'min-light',

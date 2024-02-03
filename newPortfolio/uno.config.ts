@@ -8,7 +8,7 @@ export default defineConfig({
     'color-base': 'text-gray-900 dark:text-gray-200',
     'color-fade': 'text-gray-901:50 dark:text-gray-300:50',
     'color-hover': 'hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded',
-    'color-active': 'bg-gray-200 dark:bg-gray-700 rounded'
+    'color-active': 'bg-gray-200 dark:bg-gray-700 rounded '
   },
   theme: {
     colors: {
