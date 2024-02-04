@@ -18,6 +18,7 @@ I tech mostly web development
 - Vite
 - Nitro (Server Engine)
 - Supabase (Open Source Alternative Firebase)
+- Typescript
 
 ## What software/hardware do i use
 
@@ -29,7 +30,7 @@ Here`s a list of everyday used software and hardware
 - Keyboard Keychron C1 Wired Mechanical Keyboard (Blue Switch RGB) 
 - Palm Rest
 - Mouse Fantech X9 THOR
-- Cooling Turbo (Suncell)
+- Cooling Turbo ([Suncell](https://www.tokopedia.com/suncell))
 - Tplink 722n V3
 
 ### Software
@@ -37,3 +38,6 @@ Here`s a list of everyday used software and hardware
 - [Kali Linux No Pentest](https://linuxblog.io/kali-linux-non-root-install-screenshots) 
 - Neovim (Text Editor)
 - Brave Browser Nightly ( Browser )
+- Alacritty (Terminal Shell)
+- Tmux (Terminal Multiplexer)
+- [Lunacy](https://icons8.com/lunacy) (Alternative Figma)
