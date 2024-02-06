@@ -1,10 +1,37 @@
 <script setup lang="ts">
 
-const { data: posts } = await useAsyncData(
-  'listBlog', 
+const { data } = await useAsyncData(
+  'listBlog',
   () => queryContent('/blog')
-    .where({_path:{ $ne: '/blog'}})
-    .only(['_path', 'title']).find())
+    .where({ _path: { $ne: '/blog' } })
+    .only(['_path', 'title', 'publishedAt'])
+    .sort({ publishedAt: -1 })
+    .find()
+)
+
+const posts = computed(() => {
+  if (!data.value) {
+    return []
+  }
+  const result: any[] = []
+  let lastYear = null
+
+  for (const post of data.value) {
+    const year = new Date(post.publishedAt).getFullYear()
+    // console.log(year);
+
+    const displayYear = year !== lastYear
+
+    // console.log(displayYear);
+    post.displayYear = displayYear
+    post.year = year
+    result.push(post)
+    lastYear = year
+
+  }
+  return result
+});
+
 console.log(posts);
 
 </script>
@@ -16,10 +43,10 @@ console.log(posts);
     </div>
 
     <ul>
-      <li v-for="post in posts" :key="post._path">
+      <li v-for="post in  posts " :key="post._path">
         <NuxtLink class="column hover:bg-gray-200 dark:hover:bg-gray-800" :to="post._path">
-          <div class="text-gray-500">2023</div>
-        <div class="">{{ post.title }}</div>  
+          <div :class="{ 'text-white dark:text-gray-900': !post.displayYear, 'text-gray-400 dark:text-gray-600': post.displayYear }">{{post.year}}</div>
+          <div class="">{{ post.title }}</div>
 
         </NuxtLink>
       </li>
