@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
- type Repo = {
+type Repo = {
   id: number
   name: string
   html_url: string
@@ -28,23 +28,22 @@ const sortRepos = computed(() => {
 })
 </script>
 <template>
-  <div>
-    <p class="mb10">Take a look at my github projects</p>
+  <div class="not-prose">
+    <section v-if="pending">Loading ...</section>
+    <section v-else-if="error">Something went wrong... Try again!</section>
+    <section v-else>
+      <ul class="grid grid-cols-1 gap-4">
+        <li v-for="repository in sortRepos" :key="repository.id"
+          class="border border-gray-200 rounded-sm p4 color-hover font-mono">
+          <a :href="repository.html_url" target="_blank">
+            <div class="flex items-center justify-between text-sm">
+              <div class="font-semibold">{{ repository.name }}</div>
+              <div>{{ repository.stargazers_count }} * </div>
+            </div>
+            <p class="text-sm">{{ repository.description }}</p>
+          </a>
+        </li>
+      </ul>
+    </section>
   </div>
-  <section v-if="pending">Loading ...</section>
-  <section v-if="error">Something went wrong... Try again!</section>
-  <section v-else>
-    <ul class="grid grid-cols-1 gap-4">
-      <li v-for="repository in sortRepos" :key="repository.id"
-        class="border border-gray-200 rounded-sm p4 color-hover font-mono">
-        <a :href="repository.html_url" target="_blank">
-          <div class="flex items-center justify-between text-sm">
-            <div class="font-semibold">{{ repository.name }}</div>
-            <div>{{ repository.stargazers_count }} * </div>
-          </div>
-          <p class="text-sm">{{ repository.description }}</p>
-        </a>
-      </li>
-    </ul>
-  </section>
 </template>

@@ -4,8 +4,11 @@
   })
 </script>
 <template>
-  <div>
-    <h2 class="text-2xl font-semibold mb10">Projects</h2>
-    <ProjectList />
-  </div>
+  <!-- <div> -->
+  <!--   <h2 class="text-2xl font-semibold mb10">Projects</h2> -->
+  <!--   <ProjectList /> -->
+  <!-- </div> -->
+ <article class="prose dark:prose-invert prose-truegray">
+    <ContentDoc path="/projects" />
+  </article>
 </template>
