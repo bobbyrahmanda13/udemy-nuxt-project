@@ -11,6 +11,11 @@ type Repo = {
 
 const { error, pending, data } = await useFetch<Repo[], Error>('https://api.github.com/users/bobbyrahmanda13/repos')
 
+
+// useIntervalFn(() => {
+//   refresh()
+// }, 3000)
+
 // config sort from course udemy (https://www.udemy.com/course/master-nuxt-full-stack-complete-guide)
 // const repos = computed(() =>
 //   data.value

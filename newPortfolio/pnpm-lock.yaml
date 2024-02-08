@@ -8,9 +8,6 @@ dependencies:
   '@nuxt/content':
     specifier: ^2.12.0
     version: 2.12.0(nuxt@3.10.1)(vue@3.4.16)
-  '@vueuse/nuxt':
-    specifier: ^10.7.2
-    version: 10.7.2(nuxt@3.10.1)(vue@3.4.16)
 
 devDependencies:
   '@iconify/json':
@@ -25,6 +22,9 @@ devDependencies:
   '@unocss/reset':
     specifier: ^0.58.5
     version: 0.58.5
+  '@vueuse/nuxt':
+    specifier: ^10.7.2
+    version: 10.7.2(nuxt@3.10.1)(vue@3.4.16)
   nuxt:
     specifier: ^3.10.1
     version: 3.10.1(vite@5.0.12)
@@ -1792,7 +1792,6 @@ packages:
 
   /@types/web-bluetooth@0.0.20:
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
-    dev: false
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -2269,7 +2268,6 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
-    dev: false
 
   /@vueuse/head@2.0.0(vue@3.4.16):
     resolution: {integrity: sha512-ykdOxTGs95xjD4WXE4na/umxZea2Itl0GWBILas+O4oqS7eXIods38INvk3XkJKjqMdWPcpCyLX/DioLQxU1KA==}
@@ -2285,7 +2283,6 @@ packages:
 
   /@vueuse/metadata@10.7.2:
     resolution: {integrity: sha512-kCWPb4J2KGrwLtn1eJwaJD742u1k5h6v/St5wFe8Quih90+k2a0JP8BS4Zp34XUuJqS2AxFYMb1wjUL8HfhWsQ==}
-    dev: false
 
   /@vueuse/nuxt@10.7.2(nuxt@3.10.1)(vue@3.4.16):
     resolution: {integrity: sha512-yv2hY4AiRoSqg9ELNpN6gOkDWxGuLiKE/bEbuTAAuUBhS5OeEDf5aB/kY0e/V6ZXj5XiU4LX3nE8YV8c+UKfmQ==}
@@ -2303,7 +2300,6 @@ packages:
       - rollup
       - supports-color
       - vue
-    dev: false
 
   /@vueuse/shared@10.7.2(vue@3.4.16):
     resolution: {integrity: sha512-qFbXoxS44pi2FkgFjPvF4h7c9oMDutpyBdcJdMYIMg9XyXli2meFMuaKn+UMgsClo//Th6+beeCgqweT/79BVA==}
@@ -2312,7 +2308,6 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
-    dev: false
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
@@ -7143,7 +7138,6 @@ packages:
         optional: true
     dependencies:
       vue: 3.4.16
-    dev: false
 
   /vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
