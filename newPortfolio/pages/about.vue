@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <article class="prose dark:prose-invert prose-truegray">
+  <article class="prose dark:prose-invert prose-truegray max-w-none">
     <ContentDoc path="/about" />
   </article>
   <!-- dynamic layout  -->

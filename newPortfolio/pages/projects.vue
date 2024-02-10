@@ -8,7 +8,7 @@
   <!--   <h2 class="text-2xl font-semibold mb10">Projects</h2> -->
   <!--   <ProjectList /> -->
   <!-- </div> -->
- <article class="prose dark:prose-invert prose-truegray">
+ <article class="prose dark:prose-invert prose-truegray max-w-none">
     <ContentDoc path="/projects" />
   </article>
 </template>
