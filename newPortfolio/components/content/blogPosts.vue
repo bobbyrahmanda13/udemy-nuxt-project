@@ -39,7 +39,7 @@ console.log(posts);
   <section class="not-prose font-mono ">
     <div class="column text-gray-400 text-sm">
       <div class="">Date</div>
-      <div class="">Tlllitle</div>
+      <div class="">Title</div>
     </div>
 
     <ul>
