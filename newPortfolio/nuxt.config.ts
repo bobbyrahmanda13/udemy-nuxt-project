@@ -6,6 +6,11 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true
   },
+  router : {
+    options: {
+      scrollBehaviorType:"smooth"
+    }
+  },
   modules: [
     '@unocss/nuxt',
     '@nuxtjs/color-mode',
