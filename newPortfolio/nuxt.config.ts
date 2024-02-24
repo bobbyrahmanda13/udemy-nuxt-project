@@ -6,9 +6,12 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true
   },
-  router : {
+  app: {
+    // pageTransition: { name: 'view' }
+  },
+  router: {
     options: {
-      scrollBehaviorType:"smooth"
+      scrollBehaviorType: "smooth"
     }
   },
   modules: [

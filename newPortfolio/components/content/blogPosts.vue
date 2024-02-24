@@ -32,7 +32,7 @@ const posts = computed(() => {
   return result
 });
 
-console.log(posts);
+// console.log(posts);
 
 </script>
 <template>

@@ -22,7 +22,7 @@ onMounted(() => {
     observer.observe(element)
   }
   onBeforeUnmount(() => {
-    console.log('onBeforeUnmount');
+    // console.log('onBeforeUnmount');
     for (const element of elements) {
       observer.unobserve(element)
     }
@@ -31,6 +31,7 @@ onMounted(() => {
 
 </script>
 <template>
+  <div>
   <article class="prose dark:prose-invert prose-gray max-w-none">
     <ContentDoc>
       <template #not-found>
@@ -57,4 +58,5 @@ onMounted(() => {
       </template>
     </ContentDoc>
   </article>
+</div>
 </template>
