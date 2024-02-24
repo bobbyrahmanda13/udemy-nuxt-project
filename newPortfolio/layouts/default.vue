@@ -30,7 +30,7 @@ useHead({
           <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded">Bobby Rahmanda</NuxtLink>
         </div>
 
-        <TheNav />
+          <TheNav />
 
         <ClientOnly>
           <!-- <ColorToggle /> -->
