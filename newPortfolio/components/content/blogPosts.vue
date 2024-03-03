@@ -1,12 +1,24 @@
 <script setup lang="ts">
+const props = defineProps({
+  limit: {
+    type: Number,
+    default: null
+  }
+});
 
 const { data } = await useAsyncData(
   'listBlog',
-  () => queryContent('/blog')
-    .where({ _path: { $ne: '/blog' } })
-    .only(['_path', 'title', 'publishedAt'])
-    .sort({ publishedAt: -1 })
-    .find()
+  () => {
+    const query = queryContent('/blog')
+      .where({ _path: { $ne: '/blog' } })
+      .only(['_path', 'title', 'publishedAt'])
+      .sort({ publishedAt: -1 })
+
+    if(props.limit){
+      query.limit(props.limit)
+    }
+      return query.find()
+  }
 )
 
 const posts = computed(() => {
@@ -27,7 +39,6 @@ const posts = computed(() => {
     post.year = year
     result.push(post)
     lastYear = year
-
   }
   return result
 });
@@ -36,22 +47,25 @@ const posts = computed(() => {
 
 </script>
 <template>
-  <section class="not-prose font-mono ">
-    <div class="column text-gray-400 text-sm">
-      <div class="">Date</div>
-      <div class="">Title</div>
-    </div>
+  <slot :posts="posts">
+    <section class="not-prose font-mono ">
+      <div class="column text-gray-400 text-sm">
+        <div class="">Date</div>
+        <div class="">Title</div>
+      </div>
 
-    <ul>
-      <li v-for="post in  posts " :key="post._path">
-        <NuxtLink class="column hover:bg-gray-200 dark:hover:bg-gray-800" :to="post._path">
-          <div :class="{ 'text-white dark:text-gray-900': !post.displayYear, 'text-gray-400 dark:text-gray-600': post.displayYear }">{{post.year}}</div>
-          <div class="">{{ post.title }}</div>
-
-        </NuxtLink>
-      </li>
-    </ul>
-  </section>
+      <ul>
+        <li v-for="post in  posts " :key="post._path">
+          <NuxtLink class="column hover:bg-gray-200 dark:hover:bg-gray-800" :to="post._path">
+            <div
+              :class="{ 'text-white dark:text-gray-900': !post.displayYear, 'text-gray-400 dark:text-gray-600': post.displayYear }">
+              {{ post.year }}</div>
+            <div class="">{{ post.title }}</div>
+          </NuxtLink>
+        </li>
+      </ul>
+    </section>
+  </slot>
 </template>
 
 <style scoped>
