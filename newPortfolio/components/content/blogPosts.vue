@@ -56,9 +56,9 @@ const posts = computed(() => {
 
       <ul>
         <li v-for="post in  posts " :key="post._path">
-          <NuxtLink class="column hover:bg-gray-200 dark:hover:bg-gray-800" :to="post._path">
+          <NuxtLink class="column hover:color-active dark:hover:color-active" :to="post._path">
             <div
-              :class="{ 'text-white dark:text-gray-900': !post.displayYear, 'text-gray-400 dark:text-gray-600': post.displayYear }">
+              :class="{ 'text-white hover:color-active dark:text-gray-900 dark:hover:color-active': !post.displayYear, 'text-gray-400 dark:text-gray-600': post.displayYear }">
               {{ post.year }}</div>
             <div class="">{{ post.title }}</div>
           </NuxtLink>
