@@ -24,21 +24,19 @@ useHead({
 
 <template>
   <div class="container mx-auto max-w-2xl">
-    <header class="flex justify-between items-center mt5 mb5">
-      <div class="flex justify-center items-center space-x-12">
-        <div class="">
+    <header class="flex justify-between items-start md:items-center mt5 mb5">
+      <div class="flex justify-center items-center md:space-x-12">
+        <div class="hidden md:block">
           <NuxtLink to="/" class="text-xl font-semibold p2 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded">Bobby Rahmanda</NuxtLink>
         </div>
-
-          <TheNav />
-
-        <ClientOnly>
-          <!-- <ColorToggle /> -->
-          <ColorToggle2 />
-          <!-- <ColorToggle3 /> -->
-        </ClientOnly>
-
+        <TheNav />
       </div>
+
+      <ClientOnly>
+        <!-- <ColorToggle /> -->
+        <ColorToggle2 />
+        <!-- <ColorToggle3 /> -->
+      </ClientOnly>
     </header>
 
     <main class="p2">
