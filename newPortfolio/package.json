@@ -10,16 +10,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.186",
+    "@iconify/json": "^2.2.192",
     "@nuxtjs/color-mode": "^3.3.2",
-    "@unocss/nuxt": "^0.58.5",
-    "@unocss/reset": "^0.58.5",
-    "@vueuse/nuxt": "^10.8.0",
+    "@unocss/nuxt": "^0.58.6",
+    "@unocss/reset": "^0.58.6",
+    "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.10.3",
-    "vue": "^3.4.19",
+    "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "dependencies": {
-    "@nuxt/content": "^2.12.0"
+    "@nuxt/content": "^2.12.1"
   }
 }
